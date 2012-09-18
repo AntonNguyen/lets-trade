@@ -151,5 +151,3 @@ LOGGING = {
         },
     }
 }
-
-AUTH_PROFILE_MODULE = 'api.UserProfile'
