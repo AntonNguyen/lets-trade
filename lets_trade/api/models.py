@@ -1,10 +1,11 @@
 from django.db import models
-
-# Create your models here.
-from django.db import models
+from django.contrib.auth.models import User
 
 class Item(models.Model):
-    item_name = models.CharField(max_length=80)
-    city = models.CharField(max_length=30)
-    postal_code = models.CharField(max_length=30)
-    description = models.TextField()
+	user = models.ForeignKey(User)
+	name = models.CharField(max_length=80, blank=False)
+	description = models.TextField()
+	address = models.CharField(max_length=80)
+	address2 = models.CharField(max_length=30)
+	city = models.CharField(max_length=60)
+	code = models.CharField(max_length=10)
