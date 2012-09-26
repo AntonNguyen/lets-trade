@@ -1,14 +1,16 @@
 from django.conf.urls import patterns, include, url
-from api.api import UserResource
+from api.api import UserResource, ItemResource
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
 
 user_resource = UserResource()
+item_resource = ItemResource()
 
 urlpatterns = patterns('',
 	url(r'^api/', include(user_resource.urls)),
+	url(r'^api/', include(item_resource.urls)),
     # Examples:
     # url(r'^$', 'lets_trade.views.home', name='home'),
     # url(r'^lets_trade/', include('lets_trade.foo.urls')),
